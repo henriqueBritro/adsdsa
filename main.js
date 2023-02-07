@@ -10,11 +10,11 @@ function start()
 
 recognation.onresult = function(event) {
 
-    var Content = event.results [0][0].transcript;
+    var Content = event.results[0][0].transcript;
 
     document.getElementById("textbox").innerHTML = Content;
     console.log(Content);
-    if(Content == "Tire minha selfie"){
+    if(Content == "tire minha selfie"){
         console.log("Tirando selfie");
         speak();
     }
@@ -46,26 +46,10 @@ Webcam.set({
     jpeg_quality:90
 })
 
-function takeSelfie()
-{
-    Webcam.snap(function(data_uri){
-        document.getElementById("result").innerHTML = '<img id="selfieImage" src="'+data_uri+'"/>';
-    }
-    )
-
-}
-
-
-function save(){
-    link = document.getElementById("link");
-    image = document.getElementById("selfieImage").src ; 
-    link.href = image;
-    link.click();
-}
 
 function takeSelfie(){
-    webcam.snap(function(data_uri){
-        document.getElementById("result").innerHTML = '<img id="selfieImage" src="'+data_url_+'"/>';    }
+    Webcam.snap(function(data_uri){
+        document.getElementById("result").innerHTML = '<img id="selfieImage" src="'+data_uri+'"/>';    }
 )};
 
 
